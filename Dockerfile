@@ -1,5 +1,5 @@
 # Use an official image as the base image for the builder stage
-FROM node:14-alpine AS builder
+FROM node AS builder
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 
 # Build the application
 # Use an official image as the base image for the release stage
-FROM node:14-alpine
+FROM node
 
 # Set the working directory in the container
 WORKDIR /app
