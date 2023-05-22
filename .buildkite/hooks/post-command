@@ -1,9 +1,8 @@
-if [[ "$BUILDKITE_JOB_ID" == "$BUILDKITE_BUILD_ID" ]]; then
-  echo "Running post-command script"
+if [[ "$BUILDKITE_LAST_FINISHED_STEP_LABEL" == "Deploy" ]]; then
+  echo "Running post-command script after deploy step"
 
   # Add your commands or script here
-echo "This is an example of a post-command hook from .buildkite/hooks/post-command"
 curl localhost:3000
-
-  echo "Post-command script finished"
+echo "Hi there"
+  echo "Post-command script after deploy step finished"
 fi
