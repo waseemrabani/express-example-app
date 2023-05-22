@@ -1,7 +1,7 @@
 steps:
   - label: "Build"
-    command: ".buildkite/scripts/docker-build"
+    command: "./buildkite/scripts/docker-build"
     key: "express-build"
   - label: "Deploy"
-    command: ".buildkite/scripts/deploy"
+    command: "./buildkite/scripts/deploy"
     depends_on: "express-build"
