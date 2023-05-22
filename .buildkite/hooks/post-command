@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+curl localhost:3000 
+#docker rmi -f app:v1
+
