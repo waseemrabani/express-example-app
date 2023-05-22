@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# This script is building and pushing the docker images into AWS ECR in Parallel
+# Parallelization for this build script is equal to the conditions
+# Parallelization: 2
+
+if [[ $BUILDKITE_BRANCH = master ]]
+then
+  ENV=production
+  
+else
+  ENV=staging
+  
+fi
+
+echo "--- Building $ENV :docker: containers..."
+
+# This line will login to AWS ECR using the in-premise private key
+
+
+
+docker build -t app:v1 .
