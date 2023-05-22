@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Deploying the image to the AWS ECS
+# Even though this process is called deploy, the code is already pushed to the server through ECR
+# So this step only updates the ECS using the container name
+
+
+if [[ $BUILDKITE_BRANCH = master ]]
+then
+  ENV=production
+else
+  ENV=staging
+fi
+
+echo "--- Deploying to $ENV local"
+
+docker run -d -p 3000:3000 app:v1
